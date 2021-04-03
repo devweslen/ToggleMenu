@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+
+  background: #000814;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-menu {
+  position: relative;
+  width: 64px;
+  height: 64px;
+
+  background: #ffd60a;
+
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: background 0.2s;
+}
+
+.toggle-menu:hover {
+  background: #ffc300;
+}
+
+.toggle-menu .toggle-menu-item {
+  width: 48px;
+  height: 4px;
+
+  background: #000814;
+
+  transition: all 0.5s ease-in-out;
+}
+
+.toggle-menu .toggle-menu-item::before,
+.toggle-menu .toggle-menu-item::after {
+  content: "";
+  position: absolute;
+
+  width: 48px;
+  height: 4px;
+
+  background: #000814;
+
+  transition: all 0.5s ease-in-out;
+}
+
+.toggle-menu .toggle-menu-item::before {
+  transform: translateY(-16px);
+}
+
+.toggle-menu .toggle-menu-item::after {
+  transform: translateY(16px);
+}
+
+.toggle-menu.active .toggle-menu-item {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+.toggle-menu.active .toggle-menu-item::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.toggle-menu.active .toggle-menu-item::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
